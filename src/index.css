@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #ffffff; 
+    --foreground: #0f172a; 
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    --popover: #ffffff;
+    --popover-foreground: #0f172a;
+    --primary: #0284c7; 
+    --primary-foreground: #ffffff;
+    --secondary: #0369a1;
+    --secondary-foreground: #ffffff;
+    --muted: #f1f5f9; 
+    --muted-foreground: #475569;
+    --accent: #f59e0b;
+    --accent-foreground: #ffffff;
+    --border: #e2e8f0; 
+    --input: #e2e8f0;
+    --ring: #0284c7;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: #0b1329; 
+    --foreground: #f0f9ff;
+    --card: #132247; 
+    --card-foreground: #f0f9ff;
+    --popover: #132247;
+    --popover-foreground: #f0f9ff;
+    --primary: #38bdf8; 
+    --primary-foreground: #082f49;
+    --secondary: #7dd3fc;
+    --secondary-foreground: #082f49;
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+    --accent: #fbbf24;
+    --accent-foreground: #082f49;
+    --border: #1e293b;
+    --input: #1e293b;
+    --ring: #38bdf8;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Outfit', 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-panel {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s infinite ease-in-out;
+}
